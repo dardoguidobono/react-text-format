@@ -34,12 +34,5 @@ export const splitMessage = content => {
  * @param  {array, object, string} args
  */
 export const logger = (...args) => {
-  if (
-    process &&
-    process.env &&
-    process.env.NODE_ENV &&
-    process.env.NODE_ENV === 'development'
-  ) {
-    console.log(...args)
-  }
+  
 }

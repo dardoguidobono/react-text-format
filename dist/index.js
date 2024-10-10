@@ -3341,19 +3341,6 @@ var splitMessage = function splitMessage(content) {
 };
 
 /**
- * logger is used to manage the console.logs from package.
- * #TODO: add sentry integration to get the issue logs on production
- * @param  {array, object, string} args
- */
-var logger = function logger() {
-  if (process && process.env && process.env.NODE_ENV && process.env.NODE_ENV === 'development') {
-    var _console;
-
-    (_console = console).log.apply(_console, arguments);
-  }
-};
-
-/**
  * A specialized version of `_.forEach` for arrays without support for
  * iteratee shorthands.
  *
@@ -4584,7 +4571,6 @@ var scrapper = function scrapper(content) {
       });
     });
   } catch (e) {
-    logger(e);
   }
   return {
     content: content,
@@ -4629,7 +4615,6 @@ var scrapper$1 = function scrapper$$1(content) {
       });
     });
   } catch (e) {
-    logger(e);
   }
   return {
     content: content,
@@ -4661,7 +4646,6 @@ var scrapper$2 = function scrapper(content) {
       });
     });
   } catch (e) {
-    logger(e);
   }
   return {
     content: content,
@@ -4963,7 +4947,6 @@ var scrapper$3 = function scrapper(content) {
       cc.push(ccNum);
     });
   } catch (e) {
-    logger(e);
   }
   return {
     content: content,
@@ -4987,7 +4970,6 @@ var scraper = function scraper(content) {
       phone.push(val);
     });
   } catch (e) {
-    logger(e);
   }
   return {
     content: content,
@@ -5280,7 +5262,6 @@ var scrapper$4 = function scrapper(content, termKeywords) {
       });
     }
   } catch (e) {
-    logger(e);
   }
   return {
     content: content,
@@ -5536,7 +5517,6 @@ var ReactFormatter = function ReactFormatter(props) {
       var matches = scrapeFormats(allowedFormats, string, terms);
       return decorator(matches, props);
     } catch (e) {
-      logger(e);
       return string;
     }
   };
